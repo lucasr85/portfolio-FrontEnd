@@ -1,22 +1,16 @@
 <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="mb-10 font-weight-bold text-primary">Experiencia</h6>
+            <h6 class="mb-10 font-weight-bold text-primary">Experiencia Laboral</h6>      
+            <button type="button" class="btn btn-primary" routerLink="/nuevaexp" *ngIf="isLogged">
+                Agregar Experiencia
+            </button>      
         </div>
         <div class="card-body">
-            <p class="mb-10 font-weight-bold text-black-50">Instituto Técnico - Universidad Nacional de Tucumán (2013
-                - A la fecha)</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, voluptatum esse ducimus quidem voluptatem,
-                harum at cumque nam, repellendus vero rem? Fugiat porro ut libero dolorum molestias dignissimos quidem
-                eveniet!</p>
-            <p class="mb-10 font-weight-bold text-black-50">Colegio de Bioquímicos de Tucumán (2015 - A la fecha)</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur quam saepe vitae perferendis
-                delectus quaerat nobis facere expedita, tempora iure, non praesentium aspernatur molestias omnis atque,
-                eaque sequi ipsum nemo?</p>
-            <p class="mb-10 font-weight-bold text-black-50">YBC (2011 - A la fecha)</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime cupiditate, voluptatum illo odit quia
-                blanditiis ipsum iste velit, dolorem rerum earum ex voluptate dolorum unde error nisi! Obcaecati, illum
-                fugiat!</p>
+            <div *ngFor="let Experiencia of expe">
+                <p class="mb-10 font-weight-bold text-black-50">{{Experiencia.nombreE}}</p>
+                <p>{{Experiencia.descripcionE}}</p>
+            </div>
         </div>
     </div>
 </div>
