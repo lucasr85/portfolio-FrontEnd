@@ -9,7 +9,9 @@
         <div class="card-body">
             <div *ngFor="let Experiencia of expe">
                 <p class="mb-10 font-weight-bold text-black-50">{{Experiencia.nombreE}}</p>
-                <p>{{Experiencia.descripcionE}}</p>
+                <p>{{Experiencia.descripcionE}} 
+                    <i type="button" class="bi bi-pencil-fill" routerLink="/editexp/{{Experiencia.id}}" *ngIf="isLogged"></i>                    
+                </p>                
             </div>
         </div>
     </div>
