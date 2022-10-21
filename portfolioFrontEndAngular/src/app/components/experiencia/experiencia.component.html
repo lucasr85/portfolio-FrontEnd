@@ -1,19 +1,21 @@
 <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="mb-10 font-weight-bold text-primary">Experiencia Laboral</h6>      
+            <h6 class="mb-10 font-weight-bold text-primary">Experiencia Laboral</h6>
             <button type="button" class="btn btn-primary" routerLink="/nuevaexp" *ngIf="isLogged">
                 Agregar Experiencia
-            </button>      
+            </button>
         </div>
         <div class="card-body">
             <div *ngFor="let Experiencia of expe">
-                <p class="mb-10 font-weight-bold text-black-50">{{Experiencia.nombreE}}</p>
-                <p>{{Experiencia.descripcionE}}                         
-                        <i type="button" class="bi bi-pencil-fill" routerLink="/editexp/{{Experiencia.id}}" *ngIf="isLogged" title="Editar"></i>                    
-                        <i> - </i>
-                        <i type="button" class="bi bi-trash" (click)="delete(Experiencia.id)" *ngIf="isLogged" title="Borrar"></i>
-                </p>                
+                <p class="mb-10 font-weight-bold text-black-50">{{Experiencia.nombreE}}
+                    <i type="button" class="bi bi-pencil-fill" routerLink="/editexp/{{Experiencia.id}}" *ngIf="isLogged"
+                        title="Editar"></i>
+                    <i *ngIf="isLogged"> - </i>
+                    <i type="button" class="bi bi-trash" (click)="delete(Experiencia.id)" *ngIf="isLogged"
+                        title="Borrar"></i>
+                </p>
+                <p>{{Experiencia.descripcionE}}</p>
             </div>
         </div>
     </div>
