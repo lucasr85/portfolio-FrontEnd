@@ -23,7 +23,7 @@ export class NewExperienciaComponent implements OnInit {
       alert("Experiencia añadida");
       this.router.navigate([''])
     },err=>{
-      alert("Falló");
+      alert("Falló al intentar agregar experiencia");
       this.router.navigate(['']);
     })
   }

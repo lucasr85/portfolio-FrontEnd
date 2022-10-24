@@ -3,79 +3,44 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Educación - Formación Académica</h6>
+            <h6 class="mb-10 font-weight-bold text-primary">Educación - Formación Académica</h6>
+            <button type="button" class="btn btn-primary" routerLink="/nuevaeduc" *ngIf="isLogged">
+                Nueva Educación
+            </button>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">     
                     <thead>
                         <tr>
-                            <th>Institución</th>
-                            <th>Nivel</th>
+                            <th>Institución</th>                            
                             <th>Titulo</th>
+                            <th>Nivel</th>
                             <th>Periodo</th>                            
                             <th>Estado</th>
                             <th>Logo</th>
+                            <th *ngIf="isLogged">Editar</th>
+                            <th *ngIf="isLogged">Borrar</th>
                         </tr>
-                    </thead>                    
+                    </thead>              
                     <tbody>
-                        <tr>
-                            <td>Universidad Nacional de Tucumán - Facultad de Ciencias Exactas y Tecnología</td>
-                            <td>Universitario</td>
-                            <td>Ingenieria en Computación</td>
-                            <td>2002 - a la fecha</td>
-                            <td>Incompleto</td>
-                            <td class="center"><img src="../../../assets/UNTLogo.png" id="logoUnt"></td>
-                        </tr>        
-                        <tr>
-                            <td>Ministerio de Desarrollo Productivo, la Cámara de la Industria Argentina del Software (CESSI) y el Instituto Nacional de Tecnología Industrial (INTI)</td>
-                            <td>Universitario</td>
-                            <td>Certificación Argentina Programa "YoProgramo 2da edición"</td>
-                            <td>2022 - a la fecha</td>
-                            <td>Incompleto</td>
-                            <td class="center"><img src="../../../assets/APLogo2.png" id="logoAP" ></td>
-                        </tr>   
-                        <tr>
-                            <td>Mumuki</td>
-                            <td>Curso</td>
-                            <td>Certificación Argentina Programa "Sé Programar"</td>
-                            <td>2021</td>
-                            <td>Aprobado</td>
-                            <td class="center"><img src="../../../assets/MumukiLogo.png" id="logoMumuki"></td>
-                        </tr> 
-                        <tr>
-                            <td>Centro de Educación a Distancia e Investigación en Tecnologías Educativas (CEDITE)</td>
-                            <td>Curso</td>
-                            <td>Herramientas para la Gestión de Aulas virtuales</td>
-                            <td>2020</td>
-                            <td>Aprobado</td>
-                            <td class="center"><img src="../../../assets/CediteLogo.png" id="logoCedite" ></td>
-                        </tr>                 
-                        <tr>
-                            <td>Grupo UNT OSUM y la Cátedra de Ingeniería de Software de la Carrera de Ingeniería en Computación</td>
-                            <td>Curso</td>
-                            <td>Preparación para Certificación JAVA (SCJP)</td>
-                            <td>2009</td>
-                            <td>Aprobado</td>
-                            <td class="center"><img src="../../../assets/FacetLogo.jpg" id="logoFacet"></td>
+                        <tr *ngFor="let Educacion of educacion">
+                            <td>{{Educacion.nombreE}}</td>
+                            <td>{{Educacion.descripcionE}}</td>
+                            <td>{{Educacion.nivel}}</td>
+                            <td>{{Educacion.periodo}}</td>
+                            <td>{{Educacion.estado}}</td>
+                            <td class="center"><img src={{Educacion.logo}} id="logo"></td>                        
+                            <td class="center" *ngIf="isLogged">
+                                <i type="button" class="bi bi-pencil-fill" routerLink="/editeduc/{{Educacion.id}}" *ngIf="isLogged"
+                        title="Editar"></i>
+                            </td>
+                            <td class="center" *ngIf="isLogged">
+                                <i type="button" class="bi bi-trash" (click)="delete(Educacion.id)" *ngIf="isLogged"
+                        title="Borrar"></i>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>Facultad de Ciencias Exactas y Tecnología de la U.N.T.</td>
-                            <td>Curso</td>
-                            <td>Administración de GNU / LINUX</td>
-                            <td>2005</td>
-                            <td>Aprobado</td>
-                            <td class="center"><img src="../../../assets/FacetLogo.jpg" id="logoFacet"></td>
-                        </tr>
-                        <tr>
-                            <td>Colegio del Sol - Tucumán</td>
-                            <td>Secundario</td>
-                            <td>Especialista en Informatica</td>
-                            <td>1997 - 2001</td>
-                            <td>Aprobado</td>
-                            <td class="center"><img src="../../../assets/SolLogo.jpg" id="logoSol"></td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
