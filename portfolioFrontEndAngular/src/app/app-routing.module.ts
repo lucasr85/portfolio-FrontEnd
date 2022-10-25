@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'nuevaexp',component: NewExperienciaComponent},
   { path: 'editexp/:id',component: EditExperienciaComponent},
   { path: 'nuevaeduc',component: NeweducacionComponent},
-  { path: 'editeduc/:id',component: EditeducacionComponent}
+  { path: 'editeduc/:id',component: EditeducacionComponent}  
 ];
 
 @NgModule({
