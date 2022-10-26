@@ -1,4 +1,4 @@
-export class SkillsHards {
+export class SkillsSofts {
     id?: number;
     nombre: string;
     porcentaje: number;
