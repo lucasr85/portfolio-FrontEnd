@@ -2,19 +2,28 @@
     
     <div class="card shadow mb-4" >
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Proyectos</h6>
+            <h6 class="m-10 font-weight-bold text-primary">Proyectos</h6>
+            <button type="button" class="btn btn-primary" routerLink="/nuevaeduc" *ngIf="isLogged">
+                Nuevo Proyecto
+            </button>
         </div>
-        <div class="row">           
-            <div class="card-body col-xl-6">
+        <div class="row"  *ngFor="let Proyecto of proyecto">           
+            <div class="card-body">
                 <div class="text-center">
+                    <p>{{Proyecto.nombre}}</p>
                     <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                        src="../../../assets/Cbt.png" alt="...">
+                        src={{Proyecto.url}} alt="...">
                 </div>
-                <p>Add some quality, svg illustrations to your project courtesy of, a
-                    constantly updated collection of beautiful svg images that you can use
-                    completely free and without attribution!</p>                
-            </div>
-            <div class="card-body col-xl-6">
+                <div class="text-center">{{Proyecto.descripcion}}</div>
+            </div>            
+        </div>      
+        
+    </div>
+</div>
+
+
+<!--
+    <div class="card-body col-xl-6">
                 <div class="text-center">
                     <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
                         src="../../../assets/gestor.png" alt="...">
@@ -23,8 +32,8 @@
                     constantly updated collection of beautiful svg images that you can use
                     completely free and without attribution!</p>                
             </div>
-        </div>      
-        <div class="row">
+
+             <div class="row">
             <div class="card-body col-xl-6">
                 <div class="text-center">
                     <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
@@ -75,6 +84,5 @@
                 <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
                     unDraw &rarr;</a>
             </div>
-        </div>     
-    </div>
-</div>
+        </div>    
+-->
