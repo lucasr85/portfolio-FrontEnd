@@ -27,8 +27,8 @@ import { NewHardSkillsComponent } from './components/skills/new-hard-skills.comp
 import { NewSoftSkillsComponent } from './components/skills/new-soft-skills.component';
 import { EditSoftSkillsComponent } from './components/skills/edit-soft-skills.component';
 import { EditHardSkillsComponent } from './components/skills/edit-hard-skills.component';
-import { EditproyectoComponent } from './components/editproyecto.component';
-import { NewproyectoComponent } from './components/newproyecto.component';
+import { EditproyectoComponent } from './components/proyectos/editproyecto.component';
+import { NewproyectoComponent } from './components/proyectos/newproyecto.component';
 
 
 @NgModule({
