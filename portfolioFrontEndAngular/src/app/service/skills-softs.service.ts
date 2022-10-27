@@ -7,7 +7,7 @@ import { SkillsSofts } from '../model/skills-softs';
   providedIn: 'root'
 })
 export class SkillsSoftsService {
-  URL='http://localhost:8080/sskill/';
+  URL='https://backendportfoliorobles.herokuapp.com/sskill/';
 
   constructor(private httpClient : HttpClient) { }
 
